@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Liquid Brokers - Elevate Your Trading Experience</title>
+<title>NisanX Trading - Elevate Your Trading Experience</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * {
@@ -27,32 +27,42 @@ body.modal-open {
   overflow: hidden;
 }
 
-/* Animated Background */
+/* Background with your image */
 .bg-animation {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -2;
+  background: url('NisanXbg.jpg') center/cover no-repeat;
+}
+
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  background: radial-gradient(ellipse at top, #1a1a2e 0%, #0a0a0f 70%);
+  background: radial-gradient(ellipse at top, rgba(26, 26, 46, 0.8) 0%, rgba(10, 10, 15, 0.95) 70%);
 }
 
 .liquid-blob {
   position: absolute;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.8), rgba(59, 130, 246, 0.6), rgba(236, 72, 153, 0.4));
+  background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.6), rgba(59, 130, 246, 0.4), rgba(236, 72, 153, 0.3));
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   filter: blur(80px);
   animation: morph 20s ease-in-out infinite;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .liquid-blob:nth-child(2) {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.7), rgba(139, 92, 246, 0.5));
+  background: radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.3));
   animation: morph 15s ease-in-out infinite reverse;
   top: 20%;
   right: -10%;
@@ -90,7 +100,19 @@ body.modal-open {
   background: rgba(10, 10, 15, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   z-index: 1000;
-  transition: 0.3s;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .logo {
@@ -405,6 +427,10 @@ body.modal-open {
     padding: 20px 30px;
   }
   
+  .nav-links {
+    display: none;
+  }
+  
   .hero h1 {
     font-size: 48px;
   }
@@ -441,13 +467,16 @@ body.modal-open {
 </head>
 <body>
 
-<div class="bg-animation">
-  <div class="liquid-blob" style="top: -10%; left: -10%;"></div>
-  <div class="liquid-blob"></div>
-</div>
+<div class="bg-animation"></div>
+<div class="bg-overlay"></div>
+<div class="liquid-blob" style="top: -10%; left: -10%;"></div>
+<div class="liquid-blob"></div>
 
 <nav class="navbar">
-  <div class="logo">Liquid Brokers</div>
+  <div class="logo-wrap">
+    <img src="NisanX.jpg" alt="NisanX" class="logo-img">
+    <div class="logo">NisanX Trading</div>
+  </div>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -464,7 +493,7 @@ body.modal-open {
 <section class="hero" id="home">
   <div class="hero-content">
     <h1>Elevate Your<br>Trading Experience</h1>
-    <p>Unlock your trading potential in a fully regulated<br>environment, powered by Liquid Brokers</p>
+    <p>Unlock your trading potential in a fully regulated<br>environment, powered by NisanX Trading</p>
     <div class="hero-buttons">
       <button class="btn btn-primary" onclick="openModal('signup')">Sign up & Trade</button>
     </div>
